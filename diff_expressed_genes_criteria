@@ -1,0 +1,17 @@
+#3.3
+#Creation of a matrix where the genes' qualitative expression status will be stored
+genemat<-matrix(NA,length(GED_norm[,1]),5)
+row.names(genemat)<-row.names(qmat)
+colnames(genemat)<-colnames(qmat)
+#Application of a double for-loop and an if-loop in order to compute the genes' statuses
+for (j in 1:5){
+  for (i in 1:length(genemat[,1])){
+    if ((abs(logmat[i,j])>1)&(qmat[i,j])<=0.05){
+      genemat[i,j]<-T
+    }
+    else{
+      genemat[i,j]<-F
+    }
+  }
+}
+print(head(genemat))
