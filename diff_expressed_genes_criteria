@@ -1,4 +1,3 @@
-#3.3
 #Creation of a matrix where the genes' qualitative expression status will be stored
 genemat<-matrix(NA,length(GED_norm[,1]),5)
 row.names(genemat)<-row.names(qmat)
